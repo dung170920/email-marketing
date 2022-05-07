@@ -1,0 +1,53 @@
+.features {
+  padding: 102px 0 84px;
+
+  &-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 85px;
+    padding-right: 140px;
+  }
+
+  &-content {
+    flex: 1;
+
+    .text {
+      color: $text-color-dark;
+      margin-top: 18px;
+      margin-bottom: 28px;
+    }
+
+    .info {
+      margin-bottom: 51px;
+    }
+
+    .button-primary {
+      @include subtitle-1;
+      padding: 16px 58px;
+    }
+  }
+
+  &-image {
+    flex-shrink: 0;
+  }
+
+  @include maxWidth(1023px) {
+    padding: 0;
+
+    &-container {
+      padding-right: 25px;
+      flex-direction: column;
+      gap: 64px;
+
+      .button-primary {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    &-content {
+      padding: 0 30px;
+    }
+  }
+}

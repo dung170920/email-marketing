@@ -1,0 +1,70 @@
+.button {
+  &-login {
+    @include subtitle-1;
+    background-color: $text-color-light;
+    color: white;
+    padding: 9px 25px;
+    border-radius: 6px;
+  }
+
+  &-primary {
+    @include body-2;
+    background-color: $primary-color;
+    color: white;
+    padding: 5px 30px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+
+    img {
+      display: inline-block;
+      margin-left: 19px;
+    }
+  }
+
+  &-works {
+    @include body-2;
+    background-color: transparent;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 0 16px;
+
+    img {
+      flex-shrink: 0;
+    }
+  }
+
+  &-read {
+    @include subtitle-1;
+    transition: all 0.2s linear;
+
+    &:hover {
+      border-bottom: 1px solid $primary-color;
+    }
+  }
+}
+
+@include maxWidth(1023px) {
+  .button {
+    &-login {
+      padding: 7px 30px;
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &-primary {
+      padding: 12px 20px;
+      font-size: 14px;
+      line-height: 18px;
+    }
+
+    &-works {
+      span {
+        display: none;
+      }
+    }
+  }
+}

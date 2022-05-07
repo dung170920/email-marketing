@@ -1,0 +1,43 @@
+.business {
+  background-color: $bg-header;
+  color: white;
+  padding: 60px 0;
+
+  &-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+  }
+
+  &-content {
+    .text {
+      max-width: 583px;
+    }
+
+    p {
+      color: $text-color-light;
+      margin-top: 9px;
+      margin-bottom: 41px;
+    }
+  }
+
+  @include maxWidth(1023px) {
+    &-container {
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    &-content {
+      width: 100%;
+      .text {
+        margin: 0 auto;
+        padding: 0 45px;
+      }
+
+      .button-primary {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+@mixin maxWidth($breakpoint) {
+  @media screen and (max-width: $breakpoint) {
+    @content;
+  }
+}
+
+.wrapper {
+  margin: 0 auto;
+}
+
+.container {
+  padding: 0 145px;
+  margin: 0 auto;
+  @include maxWidth(1023px) {
+    padding: 0 20px;
+  }
+}
+
+@mixin text-gradient {
+  background: $primary-gradient;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  color: $primary-gradient;
+
+  img {
+    width: 24px;
+    height: 24px;
+    object-fit: cover;
+    @include maxWidth(1023px) {
+      width: 15px;
+      height: 15px;
+      object-fit: cover;
+    }
+  }
+
+  span {
+    font-size: 25px;
+    font-weight: 600;
+    @include text-gradient;
+    margin-left: 15px;
+    @include maxWidth(1023px) {
+      font-size: 16px;
+    }
+  }
+}
+
+.menu-icon {
+  display: none;
+  @include maxWidth(1023px) {
+    display: block;
+  }
+}
+
+@mixin sectionBg($position: 'left') {
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    @if $position == 'left' {
+      left: 0;
+    } @else {
+      right: 0;
+    }
+    top: 0;
+    width: 32%;
+    height: 100%;
+    background-color: rgba(239, 231, 215, 0.8);
+  }
+}
